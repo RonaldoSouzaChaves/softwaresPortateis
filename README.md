@@ -7,7 +7,11 @@ Guia para a configuração da versão portátil de alguns softwares no *Windows 
   - [Configurando o Git](#configurando-o-git)
 - [LaTeX](#latex)
   - [LaTeX + Visual Studio Code](#latex--visual-studio-code)
+- [LibreOffice](#libreoffice)
+- [MariaDB](#mariadb)
+  - [MariaDB + Visual Studio Code (ou CMD)](#mariadb--visual-studio-code-ou-cmd)
 - [MongoDB](#mongodb)
+- [Notepad++](#notepad)
 - [PostgreSQL](#postgresql)
 - [Python](#python)
   - [Python + Visual Studio Code](#python--visual-studio-code)
@@ -90,6 +94,34 @@ C:\caminhoDoTinyTex\TinyTeX\bin\windows
 
 Para usar o *TinyTex* no *VS Code*, basta instalar a extensão *LaTeX Workshop* no *VS Code*.
 
+## LibreOffice
+
+Procure por *LibreOffice Portable Fresh* no *Google*, acesse o resultado proveniente do site *PortableApps.com* e faça o download do arquivo ```.paf``` de sua preferência (a única diferença entre os arquivos é a quantidade de idiomas diferentes disponíveis). Feito isso, basta seguir as instruções de configuração.
+
+## MariaDB
+
+1. Faça o download da versão ```.zip``` do *MariaDB* no site oficial e em seguida, extraia os arquivos para a pasta que desejar;
+2. Abra o 'Prompt de Comando' (CMD) e acesse a pasta ```bin``` nos arquivos do *MariaDB* usando o comando ```cd caminhoDoMariaDB\bin```;
+3. Já dentro da pasta, execute o comando ```mysql_install_db.exe```. Este comando fará a configuração inicial do *MariaDB*, precisando ser executado somente neste momento;
+4. Caso a mensagem ```Creation of the database was successful``` seja retornada ao fim da execução anterior, já é possível iniciar o servidor do *MariaDB*, usando o comando ```mysqld.exe --console```. O servidor será executado na própria janela do CMD, logo, deve-se deixá-la aberta enquanto se usa o *MariaDB*.
+5. Para definir a senha da conta "root" do *MariaDB*, abra uma nova janela do CMD (sem fechar a outra janela que ainda está aberta com o servidor), acesse novamente a pasta ```bin``` nos arquivos do *MariaDB* usando o comando ```cd caminhoDoMariaDB\bin``` e já dentro da pasta, use o comando ```mysqladmin -u root  flush-privileges password "senhaAqui"``` para definição da senha;
+6. Pronto. Para iniciar o servidor do *MariaDB*, abra o CMD, acesse a pasta ```bin``` nos arquivos do *MariaDB* usando o comando ```cd caminhoDoMariaDB\bin``` e digite o comando ```mysqld.exe --console```. Para automatizar esse processo, é possível usar um arquivo ```.bat``` com o seguinte script:
+```
+@echo off
+:: caminho da pasta onde o MariaDB está instalado
+set mariadbDir=caminhoDoMariaDB
+
+:: inicia o servidor MariaDB
+"%mariadbDir%\bin\mysqld.exe" --defaults-file="%mariadbDir%\data\my.ini" --console
+
+pause
+```
+7. Para interromper o servidor do *MariaDB*, basta fechar a janela na qual ele está sendo executado.
+
+### MariaDB + Visual Studio Code (ou CMD)
+
+Para acessar o *MariaDB* através do *Visual Studio Code*, faça o download da extensão *SQLTools* juntamente da extensão auxiliar para *MariaDB*. Feito isso, basta seguir as instruções da extensão para criar a conexão com o *MariaDB*. Também é possível usar o *MariaDB* através do terminal. Para isso, abra uma nova janela do CMD (assumindo que o servidor já foi iniciado), acesse novamente a pasta ```bin``` nos arquivos do *MariaDB* usando o comando ```cd caminhoDoMariaDB\bin```, e já dentro da pasta, use o comando ```mysql -u root -p```.
+
 ## MongoDB
 
 1. Faça o download das versões ```.zip``` do *Community Server* e do *Compass* no site oficial do *MongoDB*;
@@ -107,6 +139,10 @@ cd /d C:/caminhoDoCommunityServer/bin
 mongod --config C:/caminhoDoCommunityServer/bin/mongo.conf
 ```
 6. Pronto. Para usar o *MongoDB*, basta abrir o ```startMongoDBServer.bat``` (não execute como administrador, apenas abra o arquivo) e deixar o terminal que é executado pelo ```.bat``` aberto enquanto o *MongoDB* for usado. Após usar o *MongoDB*, encerre o terminal usando o comando ```Ctrl + C```.
+
+## Notepad++
+
+O download da versão portátil do *Notepad++* pode ser feito através do site oficial, estando localizado juntamente do download da versão instalável. Basta baixar o arquivo ```.zip``` e extraí-lo para a pasta desejada.
 
 ## PostgreSQL
 
