@@ -80,19 +80,20 @@ git config --global --list
 
 ## LaTeX
 
-1. Procure por *TinyTex* no *GitHub* ou no *Google*. Feito o download, execute o arquivo ```install-bin-windows.bat```;
-2. Após a execução, a pasta com o conteúdo do *TinyTex* estará localizada em ```C:/Users/<seuUsuário>/AppData/Roaming```. Caso queira mover o *TinyTex* para outro diretório, basta mover a pasta citada anteriormente para onde desejar e, em seguida, adicionar ao *path* do *Windows* o novo caminho para o executável *tlgmr*. Para tal, abra o *CMD* na pasta na qual está localizado o *TinyTex*, e execute o seguinte comando:
+1. Faça o download do arquivo ```.zip``` disponibilizado nas "releases" do repositório do *TinyTeX* no *GitHub*;
+2. Feito este download, vá até o site oficial do *TinyTeX* e faça o download do arquivo ```install-bin-windows.bat``` localizado no parágrafo que detalha a congifuração do *TinyTeX* no *Windows*. Após o download, execute o arquivo;
+3. Após a execução, a pasta com o conteúdo do *TinyTeX* estará localizada em ```C:/Users/<seuUsuário>/AppData/Roaming```. Caso queira mover o *TinyTeX* para outro diretório, basta mover a pasta citada anteriormente para onde desejar e, em seguida, adicionar ao *path* do *Windows* o novo caminho para o executável *tlgmr*. Para tal, abra o *CMD* na pasta na qual está localizado o *TinyTeX*, e execute o seguinte comando:
 ```
-"C:\caminhoDoTinyTex\TinyTeX\bin\windows\tlmgr" path add
+"C:\caminhoDoTinyTex\bin\windows\tlmgr" path add
 ```
-3. O passo 2 garante que o caminho para o *tlgmr* seja adicionado ao *path* do usuário atual, e não ao *path* global, o que pode acarretar em problemas. Se caso após a execução do passo 3, o *TinyTex* não estiver funcionando corretamente, adicione o caminho da pasta na qual está localizado o *tlgmr* ao *path* global manualmente. Basta ir nas configurações de variáveis de ambiente do sistema e adicionar o seguinte caminho ao *path* global:
+4. O passo 3 garante que o caminho para o *tlgmr* seja adicionado somente ao *path* do usuário atual, e não ao *path* global. Se caso após a execução do passo 3 o *TinyTeX* não estiver funcionando corretamente, basta ir nas configurações de variáveis de ambiente do *Windows* e adicionar manualmente o seguinte caminho ao *path* global:
 ```
-C:\caminhoDoTinyTex\TinyTeX\bin\windows
+C:\caminhoDoTinyTex\bin\windows
 ```
 
 ### LaTeX + Visual Studio Code
 
-Para usar o *TinyTex* no *VS Code*, basta instalar a extensão *LaTeX Workshop* no *VS Code*.
+Para usar o *TinyTeX* no *VS Code*, basta instalar a extensão *LaTeX Workshop* no *VS Code*.
 
 ## LibreOffice
 
