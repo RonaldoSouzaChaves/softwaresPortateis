@@ -17,6 +17,7 @@ Guia para a configuração da versão portátil de alguns softwares no *Windows 
   - [Python + Visual Studio Code](#python--visual-studio-code)
 - [R](#r)
   - [R + Visual Studio Code](#r--visual-studio-code)
+- [Thonny](#thonny)
 - [Visual Studio Code](#visual-studio-code)
 
 ## Git
@@ -204,6 +205,10 @@ C:\caminhoDoR\bin\R.exe
 C:\caminhoDoR\bin\x64\R.exe
 ```
 5. Feito isso, instale a extensão *R* no *VS Code*.
+
+## Thonny
+
+O download da versão portátil do *Thonny* pode ser feito através do site oficial, estando localizado juntamente do download da versão instalável. Basta baixar o arquivo ```.zip``` e extraí-lo para a pasta desejada.
 
 ## Visual Studio Code
 
